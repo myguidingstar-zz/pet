@@ -1,0 +1,29 @@
+{
+  "name": "angular-cl2-seed",
+  "version": "0.1.0",
+  "description": "Template for Angular + ChlorineJS projects",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/chlorinejs/angular-cl2-seed.git"
+  },
+  "keywords": [
+    "angular",
+    "qunit",
+    "testem",
+    "bootstrap",
+    "chlorinejs",
+    "clojure",
+    "template"
+  ],
+  "devDependencies": {
+    "testem": "~0.2.26",
+    "chloric": "0.1.13",
+    "angular-cl2": "0.2.2",
+    "less": "~1.4.0"
+  },
+  "license": "Public domain",
+  "scripts": {
+    "watch": "cl2c -d -u profile.cl2 -t 10000 -v -w './src/,./test/' ./test/test_runners.cl2 ./test/test.hic ./src/*.hic ./src/*.cl2 ./src/partials/*.hic",
+    "livetest": "testem"
+  }
+}

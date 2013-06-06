@@ -1,0 +1,8 @@
+{
+    "framework": "qunit",
+    "routes": {
+        "/": "test/test.html",
+        "/test": "test",
+        "/target": "target"
+    }
+}
