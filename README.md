@@ -1,10 +1,11 @@
-Angular-cl2-seed
+PET
 ================
-A battery-included template for using AngularJS and [ChlorineJS](https://github.com/chlorinejs/chlorine/wiki).
-Bootstrap customization, font-awesome and unit tests are ready to use.
+The Foss Project Evaluation Tool
 
-Usage
-=====
+Develop
+=======
+
+You need java, nodejs and bower to develop.
 
 Install dependencies
 --------------------
@@ -43,3 +44,10 @@ nodefront serve -l/--live
 Bootstrap
 ---------
 A simple blue bootstrap theme is included. You can customize it with the `/less` directory.
+
+License
+=======
+
+(c) 2013 Hoang Minh Thang
+
+PET is licensed under [AGPL](http://www.gnu.org/licenses/agpl.html) or later. See COPYING for more details.
