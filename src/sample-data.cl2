@@ -119,7 +119,7 @@
    1 {:id 0 :name "An other project"
       :template-id "0,2.0"}})
 
-(def langs
+(def sample-langs
   ;; First and second languages in user agent accepted langs
   ;; are automatically loaded. Others are loaded on-demand.
   {"en" {:id "en" :name "English"}
