@@ -1,4 +1,5 @@
 (load-file "../src/core.cl2")
+(load-file "./crud_tests.cl2")
 
 (ng-test myApp
   (:controller myCtrl

@@ -1,6 +1,7 @@
 (load-file "../node_modules/angular-cl2/src/angular.cl2")
 (load-file "../node_modules/cl2-contrib/src/concurrency.cl2")
 (load-file "../node_modules/cl2-contrib/src/timers.cl2")
+(load-file "./crud.cl2")
 
 (defapp myApp [ui.bootstrap $strap.directives])
 
