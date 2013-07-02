@@ -2,7 +2,7 @@
 (load-file "../node_modules/cl2-contrib/src/concurrency.cl2")
 (load-file "../node_modules/cl2-contrib/src/timers.cl2")
 
-(defapp myApp [])
+(defapp myApp [ui.bootstrap $strap.directives])
 
 ;; don't have to specify app name as compiler remember the last app name
 ;; defined in `defapp`

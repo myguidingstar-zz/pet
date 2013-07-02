@@ -1,16 +1,22 @@
 [:html {:lang "en" :ng-app "myApp"}
  [:head
   [:meta  {:charset "utf-8"}]
-  [:title "My App"]
+  [:title "PET"]
   [:link {:rel "stylesheet" :href "css/bootstrap.min.css"}]
   [:link {:rel "stylesheet" :href "css/responsive.min.css"}]
+  [:link
+   {:href "components/angular-strap/vendor/bootstrap-datepicker.css"}]
   [:link
    {:href
     "http://fonts.googleapis.com/css?family=Arimo|Open+Sans+Condensed:300|Noto+Serif:700italic&subset=latin"
     :rel "stylesheet"}]
   [:script
    "document.write('<base href=\"' + document.location + '\" />')"]
+  [:script {:src "components/jquery/jquery.min.js"}]
   [:script {:src "components/angular/angular.min.js"}]
+  [:script {:src "components/angular-bootstrap/ui-bootstrap-tpls.min.js"}]
+  [:script {:src "components/angular-strap/dist/angular-strap.js"}]
+  [:script {:src "components/angular-strap/vendor/bootstrap-datepicker.js"}]
   [:script {:src "core.js"}]]
  [:body
   [:div.navbar
