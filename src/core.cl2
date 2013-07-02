@@ -36,6 +36,7 @@
 ;; example of specifying app name
 (defservice myApp myService
  []
+ (this->!)
  (defn! addThree [n] (+ n 3)))
 
 ;; generic defmodule usage
