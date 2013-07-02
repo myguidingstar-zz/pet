@@ -1,10 +1,10 @@
 {
-  "name": "angular-cl2-seed",
+  "name": "PET",
   "version": "0.1.0",
-  "description": "Template for Angular + ChlorineJS projects",
+  "description": "the FOSS Project Evaluation Tool",
   "repository": {
     "type": "git",
-    "url": "http://github.com/chlorinejs/angular-cl2-seed.git"
+    "url": "http://github.com/myguidingstar/pet.git"
   },
   "keywords": [
     "angular",
@@ -13,17 +13,25 @@
     "bootstrap",
     "chlorinejs",
     "clojure",
-    "template"
+    "evaluation",
+    "collaboration",
+    "FOSS"
   ],
   "devDependencies": {
     "testem": "~0.2.26",
-    "chloric": "0.1.13",
-    "angular-cl2": "0.2.2",
+    "chloric": "0.1.14",
+    "angular-cl2": "0.3.0",
+    "cl2-contrib": "0.2.0",
     "less": "~1.4.0"
   },
-  "license": "Public domain",
+  "license": "AGPL",
   "scripts": {
-    "watch": "cl2c -d -u profile.cl2 -t 10000 -v -w './src/,./test/' ./test/test_runners.cl2 ./test/test.hic ./src/*.hic ./src/*.cl2 ./src/partials/*.hic",
+    "watch": "cl2c -d -u profile.cl2 -t 10000 -v -w './src/,./src-server/,./test/' ./test/test_runners.cl2 ./test/test.hic ./src/*.hic ./src/*.cl2 ./src/partials/*.hic ./src-server/*.cl2",
     "livetest": "testem"
+  },
+  "dependencies": {
+    "sockjs": "~0.3.7",
+    "express": "~3.2.6",
+    "orm": "~2.0.13"
   }
 }
