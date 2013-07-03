@@ -26,7 +26,7 @@
   },
   "license": "AGPL",
   "scripts": {
-    "watch": "cl2c -d -u profile.cl2 -t 10000 -v -w './src/,./src-server/,./test/' ./test/test_runners.cl2 ./test/test.hic ./src/*.hic ./src/*.cl2 ./src/partials/*.hic ./src-server/*.cl2",
+    "watch": "cl2c -d -u profile.cl2 -t 10000 -v -w './node_modules/,./src/,./src-server/,./test/' ./test/test_runners.cl2 ./test/test.hic ./src/*.hic ./src/*.cl2 ./src/partials/*.hic ./src-server/*.cl2",
     "livetest": "testem"
   },
   "dependencies": {
