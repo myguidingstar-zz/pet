@@ -20,8 +20,8 @@
   "devDependencies": {
     "testem": "~0.2.26",
     "chloric": "0.1.14",
-    "angular-cl2": "0.3.0",
-    "cl2-contrib": "0.2.0",
+    "angular-cl2": "0.3.1",
+    "cl2-contrib": "0.2.1",
     "less": "~1.4.0"
   },
   "license": "AGPL",
