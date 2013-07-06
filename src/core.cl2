@@ -28,7 +28,9 @@
       (fn [value] (. elm (text (+ value 4))))))))
 
 (defcontroller myCtrl
-  [$scope myService]
+  [$scope myService entitiesService]
+  ($->atom entities entitiesService.entities)
+  (. entitiesService getEntities "boards" 0)
   (def$ someNumber 12)
   (defn$ addTwo [n] {:result (+ n 2)})
   (defn$ serviceAdd [n]
