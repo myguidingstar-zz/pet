@@ -2,7 +2,7 @@
          ["http"]
          ["sockjs"])
 
-(load-file "../src/json.cl2")
+(load-file "../node_modules/cl2-contrib/src/json.cl2")
 (load-file "../node_modules/cl2-contrib/src/concurrency.cl2")
 (load-file "../node_modules/cl2-contrib/src/timers.cl2")
 
