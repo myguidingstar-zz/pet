@@ -40,10 +40,27 @@
   [$scope])
 
 ;; example of specifying app name
+(defservice entitiesService
+  [$http]
+  (this->!)
+  (def! entities (atom {}))
+
+  (defn! getEntities [type id]
+    (.. $http
+        (get (+ "/api/" type "/" id))
+        (success (fn [data status]
+                   (alert (pr-str data))
+                   (reset! (!- entities) data)))
+        (error   (fn [data status]
+                   (alert (pr-str data)))))
+    nil)
+
+  nil)
+
 (defservice myApp myService
- []
- (this->!)
- (defn! addThree [n] (+ n 3)))
+  []
+  (this->!)
+  (defn! addThree [n] (+ n 3)))
 
 ;; generic defmodule usage
 (defmodule myApp
