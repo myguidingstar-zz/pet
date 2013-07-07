@@ -3,6 +3,7 @@
 (load-file "../node_modules/cl2-contrib/src/timers.cl2")
 (load-file "../node_modules/cl2-contrib/src/json.cl2")
 (load-file "./crud.cl2")
+(load-file "./helpers.cl2")
 
 (defapp myApp [ui.bootstrap $strap.directives])
 
@@ -22,3 +23,4 @@
 (load-file "./directives.cl2")
 (load-file "./controllers.cl2")
 (load-file "./services.cl2")
+(load-file "./filters.cl2")

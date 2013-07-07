@@ -1,7 +1,8 @@
 (defcontroller myCtrl
   [$scope entitiesService]
-  ($->atom entities entitiesService.entities)
-  (. entitiesService getEntities "boards" 0))
+  ($->atom boards entitiesService.entities.boards)
+  (. entitiesService fetch "boards" 0)
+  )
 
 (defcontroller emptyCtrl
   [$scope])
