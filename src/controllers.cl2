@@ -1,5 +1,5 @@
 (defcontroller myCtrl
-  [$scope myService entitiesService]
+  [$scope entitiesService]
   ($->atom entities entitiesService.entities)
   (. entitiesService getEntities "boards" 0)
   (def$ someNumber 12)
