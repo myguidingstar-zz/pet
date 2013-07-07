@@ -14,13 +14,17 @@
                      (reset! (get (!- entities) type)
                              data)))
           (error   (fn [data status]
-                     (alert (pr-str data)))))
+                     (println "Error fetching" (+ "/api/" type)
+                              "Status: " status
+                              "Data:"    data))))
       (.. $http
           (get (+ "/api/" type "/" id))
           (success (fn [data status]
                      (add-entity! (get (!- entities) type)
                                   id data)))
           (error   (fn [data status]
-                     (alert (pr-str data))))))
+                     (println "Error fetching" (+ "/api/" type "/" id)
+                              "Status: " status
+                              "Data:"    data)))))
     )
   )
