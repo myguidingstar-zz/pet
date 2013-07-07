@@ -9,6 +9,8 @@
 ;; don't have to specify app name as compiler remember the last app name
 ;; defined in `defapp`
 (defroute
+  "/evaluation/:boardId/:projectId"
+  ['evalCtrl "partials/evaluation.html" ]
   "/default" ['myCtrl "partials/default.html" ]
   "/view-2"  {:controller 'emptyCtrl
               :template

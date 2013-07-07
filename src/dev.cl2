@@ -12,6 +12,13 @@
      ~@(for [entity-type entity-types]
          `(doseq [id (keys ~(symbol (str "sample-" entity-type)))]
             (.. $httpBackend
+                (whenGET (+ "/api/" ~entity-type))
+                (respond
+                 (fn []
+                   [200
+                    (serialize ~(symbol (str "sample-" entity-type)))]
+                   )))
+            (.. $httpBackend
                 (whenGET (+ "/api/" ~entity-type "/" id))
                 (respond
                  (fn []
