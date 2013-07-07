@@ -1,23 +1,8 @@
 (load-file "../src/core.cl2")
+(load-file "../src/dev.cl2")
 (load-file "./crud_tests.cl2")
 
-(ng-test myApp
-  (:controller myCtrl
-    (:tabular
-     (addTwo 1) {:result 3}))
-
-  (:service myService
-    (:tabular
-     (addThree 1) 4))
-
-  (:filter myFilter
-    (:tabular
-     [1] 6))
-
-  (:filter yourFilter
-    (:tabular
-     [2] 8))
-
+(ng-test myAppDev
   (:directive MyDirective
     (:tabular
      [:div {:my-directive "foo"}]
