@@ -18,18 +18,7 @@
   :default "/default")
 
 (load-file "./directives.cl2")
-
-(defcontroller myCtrl
-  [$scope myService entitiesService]
-  ($->atom entities entitiesService.entities)
-  (. entitiesService getEntities "boards" 0)
-  (def$ someNumber 12)
-  (defn$ addTwo [n] {:result (+ n 2)})
-  (defn$ serviceAdd [n]
-    (myService.addThree n)))
-
-(defcontroller emptyCtrl
-  [$scope])
+(load-file "./controllers.cl2")
 
 ;; example of specifying app name
 (defservice entitiesService
