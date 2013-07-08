@@ -22,15 +22,20 @@
            (delete (get entities id))
            entities)))
 
-(defn find-entities
-  "Finds entities that match given criteria."
-  [entities-atom criteria]
+(defn find-entities*
+  "A version of find-entities that works on entities' values (not atom)"
+  [entities criteria]
   (let [pred (if (fn? criteria)
                criteria
                #(matches-map? % criteria))]
-    (for [entity @entities-atom
+    (for [entity entities
           :when (pred entity)]
       entity)))
+
+(defn find-entities
+  "Finds entities that match given criteria."
+  [entities-atom criteria]
+  (find-entities* @entities-atom criteria))
 
 (defn find-&-update-entities!
   "Finds entities that match given criteria."
