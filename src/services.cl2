@@ -28,3 +28,24 @@
                               "Data:"    data)))))
     )
   )
+
+(defservice session
+  "Stores current logged-in user's information."
+  [data]
+  (this->!)
+
+  (set! (!- current) (atom nil))
+
+  (defn! login!
+    "Sends login credentials to server."
+    [username password]
+    )
+
+  (defn! login-as!
+    [user-id]
+    (reset! (!- current)
+            (get @data.entities.users user-id)))
+
+  ;; initial stage: guest session
+  ((!- login-as!) 0)
+  )
