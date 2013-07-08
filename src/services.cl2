@@ -31,7 +31,7 @@
 
 (defservice session
   "Stores current logged-in user's information."
-  [data]
+  [entitiesService]
   (this->!)
 
   (set! (!- current) (atom nil))
@@ -44,8 +44,8 @@
   (defn! login-as!
     [user-id]
     (reset! (!- current)
-            (get @data.entities.users user-id)))
+            (get @entitiesService.entities.users user-id)))
 
   ;; initial stage: guest session
-  ((!- login-as!) 0)
+  ((!- login-as!) 1)
   )
