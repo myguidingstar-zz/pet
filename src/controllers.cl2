@@ -105,3 +105,14 @@
                                   ($- item.id) ($- opinion.id)))
 
   )
+
+(defcontroller newOpinionCtrl
+  [$scope evaluation]
+  (def$ opinion {:type "comment"})
+  (defn$ addOpinion
+    [user-id item-id opinion]
+    (when opinion.message
+      (evaluation.add-opinion ($- boardId) ($- projectId)
+                              ($- templateId) ($- templateVersion)
+                              user-id item-id opinion)
+      (def$ opinion {:type "comment"}))))
