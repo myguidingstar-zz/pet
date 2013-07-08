@@ -104,6 +104,9 @@
     (evaluation.unapprove-opinion ($- boardId) ($- projectId)
                                   ($- item.id) ($- opinion.id)))
 
+  (defn$ removeOpinion [opinion-id]
+    (evaluation.remove-opinion opinion-id))
+
   )
 
 (defcontroller newOpinionCtrl
