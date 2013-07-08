@@ -5,6 +5,12 @@
 
 (defapp myAppDev [myApp ngMockE2E])
 
+(defservice simulator
+  "Sets up some scenario for mocking design."
+  [evaluation]
+  (do-timeout 1000
+              (reset! evaluation.opinions sample-opinions)))
+
 (defmacro serve-entities
   "Serves entities from sample-data.cl2 via $httpBackend."
   [& entity-types]
@@ -36,7 +42,7 @@
            )))))
 
 (. myAppDev
-   (run (fn-di [$httpBackend]
+   (run (fn-di [$httpBackend simulator]
                (serve-entities "boards"
                                "users"
                                "templates"
