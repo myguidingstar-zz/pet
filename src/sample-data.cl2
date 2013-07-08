@@ -115,9 +115,9 @@
 
 (def sample-projects
   {0 {:id 0 :name "Sample project"
-      :template-id "0,1.0"}
+      :template-id 0 :template-version "1.0"}
    1 {:id 0 :name "An other project"
-      :template-id "0,2.0"}})
+      :template-id 0 :template-version "2.0"}})
 
 (def sample-langs
   ;; First and second languages in user agent accepted langs
