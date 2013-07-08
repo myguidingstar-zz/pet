@@ -49,3 +49,23 @@
   ;; initial stage: guest session
   ((!- login-as!) 1)
   )
+
+(defservice evaluation
+  "Stores evaluation template and opinions by members"
+  [entitiesService]
+  (this->!)
+  (def! opinions (atom {}))
+
+  (defn! add-opinion
+    [board-id project-id template-id template-version
+     user-id item-id opinion]
+    (add-entity! (!- opinions) nil
+                 (merge opinion {:id
+                                 (inc (apply max (map parseInt (keys @(!- opinions)))))
+                                 :board-id board-id
+                                 :project-id project-id
+                                 :template-id template-id
+                                 :template-version template-version
+                                 :user-id user-id
+                                 :item-id item-id})))
+  )
