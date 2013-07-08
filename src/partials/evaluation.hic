@@ -18,12 +18,29 @@
     {:ng-model "projectId"
      :ng-options "p.id as p.name for p in projects"}]]
   [:div
-   [:h2 "Debug:"]
-   [:div "Lang: {{lang}}"]
-   [:div "Project: {{projectId}}"]
-   [:div "Board: {{board}}"]]]
+   [:h2 "Debug items:"]
+   [:div "Template-id: {{templateId}}"]
+   [:div "Project-id: {{projectId}}"]
+   [:div "Board-id: {{boardId}}"]
+   [:div "Eval-id: {{evalId}}"]]]
 
  [:div.span9.offset3
+  [:div
+   [:h2 "Debug items:"]
+   [:div "Template-id: {{templateId}}"]
+   [:div "Template-version: {{templateVersion}}"]
+   [:div "Template: {{template}}"]
+   [:div "Project: {{project}}"]
+   [:div "Board: {{board}}"]
+   [:div "Eval: {{eval}}"]]
+  [:div
+   [:h2 "Debug colls:"]
+   [:div "Langs: {{langs}}"]
+   [:div "Templates: {{templates}}"]
+   [:div "Projects: {{projects}}"]
+   [:div "Boards: {{boards}}"]
+   [:div "Opinions: {{opinions}}"]
+   [:div "All Opinions: {{allOpinions}}"]]
   [:div.media.span8 {:ng-repeat "group in template.groups"}
    [:div
     [:h1 "{{group.name}}"]
