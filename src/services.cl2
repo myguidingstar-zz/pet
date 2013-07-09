@@ -73,4 +73,9 @@
       :template-version template-version
       :user-id user-id
       :item-id item-id)))
+
+  (defn! remove-opinion
+    [id]
+    (remove-entity! (!- opinions) id))
+
   )
