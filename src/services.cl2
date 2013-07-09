@@ -78,4 +78,26 @@
     [id]
     (remove-entity! (!- opinions) id))
 
+  (defn! approve-opinion
+    [board-id project-id template-id template-version
+     item-id opinion-id]
+    (find-&-update-entities!
+     (!- opinions)
+     {:board-id board-id
+      :project-id project-id
+      :template-id template-id
+      :template-version template-version
+      :item-id item-id}
+     (fn [opinion]
+       (if (=== opinion.id opinion-id)
+         (assoc opinion
+           :approved    true
+           ;; set by server, not client
+           :approved-by 1
+           :approved-ts (.now Date))
+         (assoc opinion
+           :approved    nil
+           :approved-by nil
+           :approved-ts nil)))))
+
   )
