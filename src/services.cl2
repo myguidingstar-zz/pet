@@ -59,13 +59,18 @@
   (defn! add-opinion
     [board-id project-id template-id template-version
      user-id item-id opinion]
-    (add-entity! (!- opinions) nil
-                 (merge opinion {:id
-                                 (inc (apply max (map parseInt (keys @(!- opinions)))))
-                                 :board-id board-id
-                                 :project-id project-id
-                                 :template-id template-id
-                                 :template-version template-version
-                                 :user-id user-id
-                                 :item-id item-id})))
+    (add-entity!
+     (!- opinions) nil
+     (assoc
+      opinion
+      :id
+      (inc (or (apply max
+                      (map parseInt (keys @(!- opinions))))
+               0))
+      :board-id board-id
+      :project-id project-id
+      :template-id template-id
+      :template-version template-version
+      :user-id user-id
+      :item-id item-id)))
   )
