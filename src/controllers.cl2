@@ -93,20 +93,23 @@
 (defcontroller opinionsCtrl
   [$scope evaluation]
   (def points evaluation.points)
-  (set! public $scope)
 
   (defn$ approveOpinion
     []
-    (evaluation.approve-opinion ($- boardId) ($- projectId)
-                                ($- item.id) ($- opinion.id)))
+    (evaluation.approve-opinion
+     ($- boardId) ($- projectId)
+     ($- templateId) ($- templateVersion)
+     ($- item.id) ($- opinion.id)))
 
   (defn$ unapproveOpinion
     []
-    (evaluation.unapprove-opinion ($- boardId) ($- projectId)
-                                  ($- item.id) ($- opinion.id)))
+    (evaluation.unapprove-opinion
+     ($- boardId) ($- projectId)
+     ($- templateId) ($- templateVersion)
+     ($- item.id) ($- opinion.id)))
 
-  (defn$ removeOpinion [opinion-id]
-    (evaluation.remove-opinion opinion-id))
+  (defn$ removeOpinion []
+    (evaluation.remove-opinion ($- opinion.id)))
 
   )
 
