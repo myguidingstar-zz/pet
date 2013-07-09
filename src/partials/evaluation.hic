@@ -65,13 +65,15 @@
         [:div.pull-right
          [:i.icon-large.icon-ok-circle.text-success
           {:ng-click "approveOpinion()"
-           :ng-show "!opinion.approved&&opinion.type!=='comment'"}
+           :ng-show
+           #=(str "!opinion.approved &&"
+                  "opinion.type !== 'comment'")}
           " "]
          [:i.icon-large.icon-ban-circle.text-warning
           {:ng-click "unapproveOpinion()"
            :ng-show "opinion.approved"} " "]
          [:i.icon-large.icon-remove-circle.text-error
-          {:ng-click "removeOpinion(opinion.id)"}
+          {:ng-click "removeOpinion()"}
           " "]]
         [:div.pull-left {:style "width: 4em"}
          [:i
