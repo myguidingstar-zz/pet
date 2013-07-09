@@ -39,7 +39,7 @@
    [:div "Templates: {{templates}}"]
    [:div "Projects: {{projects}}"]
    [:div "Boards: {{boards}}"]
-   [:div "Opinions: {{opinions}}"]
+   [:div "Opinions: {{filterCurrent(allOpinions)}}"]
    [:div "All Opinions: {{allOpinions}}"]]
   [:div.media.span8 {:ng-repeat "group in template.groups"}
    [:div
@@ -56,7 +56,7 @@
        ;; [:i.icon-info-sign.icon-large.text-info " "]
        "{{item.desc}}"]
       [:div
-       {:ng-repeat #=(str "opinion in opinions"
+       {:ng-repeat #=(str "opinion in filterCurrent(allOpinions)"
                           "|filterByKeyVal:'item-id':item.id")
         :ng-controller "opinionsCtrl"}
        [:div.media
