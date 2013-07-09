@@ -39,15 +39,16 @@
              (get templates (gen-access-key ($- templateId)
                                             ($- templateVersion)))))
 
-  (defn filter-opinions [opinions]
+  (defn$ filterCurrent
+    "From all opinions produces a vector of opinions for current
+  evalutation (based on :board-id, :project-id, :template-id and
+  :template-version"
+    [opinions]
     (find-entities* opinions
                     {:board-id    ($- boardId)
                      :project-id  ($- projectId)
                      :template-id ($- templateId)
                      :template-version ($- templateVersion)}))
-
-  ($->atom opinions evaluation.opinions
-           filter-opinions)
 
   ($->atom allOpinions evaluation.opinions)
 
