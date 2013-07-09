@@ -100,4 +100,19 @@
            :approved-by nil
            :approved-ts nil)))))
 
+  (defn! unapprove-opinion
+    [board-id project-id template-id template-version
+     item-id opinion-id]
+    (find-&-update-entities!
+     (!- opinions)
+     {:board-id board-id
+      :project-id project-id
+      :template-id template-id
+      :template-version template-version
+      :item-id item-id}
+     (fn [opinion]
+       (assoc opinion
+         :approved    nil
+         :approved-by nil
+         :approved-ts nil))))
   )
